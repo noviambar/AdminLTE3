@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Membuat CRUD Pada Laravel</title>
+</head>
+<body>
+
+	<h2>Data Karyawan</h2>
+
+	<a href="/karyawan/tambah"> + Tambah Karyawan Baru</a>
+
+	<br/>
+	<br/>
+
+	<table border ="1">
+		<tr>
+			<th>Nama</th>
+			<th>Email</th>
+			<th>Posisi</th>
+			<th>Opsi</th>
+		</tr>
+		@foreach($karyawan as $k)
+		<tr>
+			<td>{{ $k->nama_karyawan }}</td>
+			<td>{{ $k->email }}</td>
+			<td>{{ $k->Posisi }}</td>
+			<td>
+				<a href="/karyawan/edit/{{ $k->id_karyawan }}">Edit</a>
+				<a href="/karyawan/hapus/{{ $k->id_karyawan }}">Hapus</a>
+			</td>
+		</tr>
+		@endforeach
+	</table>
+
+</body>
+</html>
